@@ -1,0 +1,33 @@
+-- rhythmic stack
+d1 $ stack [
+  s "909*16?" # shape sine # pan "0.3" # gain "1.2",
+  s "hh*44?" # hbrick sine # pan "0.6",
+  s "wobble" # squiz "[2|4|9|15|20|35|50]" # pan (slow 4 $ range (-1) 1 sine)
+]
+
+-- melodic arp
+d2 $ fast 4 $ note (arp "updown" "<e'minor b'minor>" + "<0 2 4 5 7 0 9 3>")
+   # s "supermandolin"
+   # gain 1.1
+   # pan (slow 6 $ range (-1) 1 saw) 
+
+-- glitchy percussion texture
+d4 $ s "glitch*8"
+   # crush (range 2 8 $ slow 4 sine)
+   # speed (range 0.5 1.5 $ slow 3 saw)
+   # pan (slow 3 $ range (-1) 1 saw)
+
+-- sparkle layer
+d5 $ s "perc"
+   # speed (range 0.5 2 $ slow 2 sine)
+   # gain 0.9
+   # crush 4
+   # pan (slow 5 $ range (-1) 1 saw)
+
+-- ambient fx
+d6 $ s "arpy*4"
+   # room 0.8 # sz 0.9
+   # gain 0.7
+   # delay 0.3 # delayt 0.4
+
+hush
