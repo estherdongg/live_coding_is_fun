@@ -10,7 +10,6 @@
 ##### open [pulsar](https://pulsar-edit.dev/)
 ##### save a `.tidal` file in pulsar
 ##### menu -> package -> atom-hydra -> toggle
-##### menu -> package -> tidal cycle-> boost
 
 ##### now run your tidal cycles code with shift+return in pulsar!
 
